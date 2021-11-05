@@ -37,28 +37,28 @@ Before you get started, please take a few minutes and get acquainted with this a
 
 **Step 1 - Add item functionality**
 
-- In `App.js` there is a function called `addItem`. Finish writing the logic in this function to be able to add the given item to the shopping cart
+- In `App.js` there is a function called `addItem`. Finish writing the logic in this function to be able to add the given item to the shopping cartx
 
 **STEP 2 - Creating ProductContext**
 
-- In `src`, create a new folder named `contexts`, this folder is going to be used to hold all of `context objects` we create.
+- In `src`, create a new folder named `contexts`, this folder is going to be used to hold all of `context objects` we create.x
 
-- Inside that folder create a new file named `ProductContext.js`
+- Inside that folder create a new file named `ProductContext.js`x
 
-- In this file, import the `createContext` function from the react library and create our `ProductContext`.
+- In this file, import the `createContext` function from the react library and create our `ProductContext`. x
 
 **STEP 3 - Providing data with ProductContext**
 
-- Now that we've created our `ProductContext` we can import into our `App.js`. Now we can start providing data across our application!
+- Now that we've created our `ProductContext` we can import into our `App.js`. Now we can start providing data across our application! x
 
-- Wrap all of your components/routes in `App.js` inside of `ProductContext.Provider` component.
+- Wrap all of your components/routes in `App.js` inside of `ProductContext.Provider` component. x
 
-- Next pass a value prop to your `Provider`.
+- Next pass a value prop to your `Provider`. x
 
-- In the value prop we'll pass in the products state, and an addItem function that will allow us to add books to the cart.
+- In the value prop we'll pass in the products state, and an addItem function that will allow us to add books to the cart. x 
 
 ```js
-<ProductContext.Provider value={{ products, addItem }}>
+<ProductContext.Provider value={{ products, addItem }}> x 
 ```
 
 - Now that we're providing our products state and addItem function we can simplify our products route a bit.
@@ -83,11 +83,11 @@ Before you get started, please take a few minutes and get acquainted with this a
 
 **STEP 4 - Consuming data with ProductContext**
 
-- Now that our `ProductContext` is now providing data we can finally consume it! To do so let's head over to our `Products` component and import the `useContext` hook as well as our `ProductContext`.
+- Now that our `ProductContext` is now providing data we can finally consume it! To do so let's head over to our `Products` component and import the `useContext` hook as well as our `ProductContext`. x 
 
 - In the component, call the `useContext` hook and pass in the context object we want to use into it.
 
-- When we do this, `useContext` is going to return value passed by our `ProductContext` Provider `value` prop. In our case we're getting back an object with two properties. A `products` property and a `addItem` property. We can go ahead and destructure those.
+- When we do this, `useContext` is going to return value passed by our `ProductContext` Provider `value` prop. In our case we're getting back an object with two properties. A `products` property and a `addItem` property. We can go ahead and destructure those. x 
 
 ```js
 const { products, addItem } = useContext(ProductContext);
@@ -97,31 +97,31 @@ const { products, addItem } = useContext(ProductContext);
 
 - To do so we just need to remove every instance of `props`.
 
-  - Remove it from the function parameters
-  - Remove it from the products map
-  - Remove it from addItem prop
+  - Remove it from the function parameters x 
+  - Remove it from the products map x
+  - Remove it from addItem prop x
 
-- Now our `Products` component is getting it's data solely from `Context API` 😃.
+- Now our `Products` component is getting it's data solely from `Context API` 😃. x
 
 **STEP 5 - Create the CartContext**
 
-- Now that we have refactored our `Products` component to utilize `Context API` let's refactor our `Cart` and `Navigation` Component to use `Context API` as well.
+- Now that we have refactored our `Products` component to utilize `Context API` let's refactor our `Cart` and `Navigation` Component to use `Context API` as well. x
 
 - To start create a new file in our contexts folder named `CartContext.js`, this context is going to be utilized by our `ShoppingCart` and `Navigation` component.
 
-- Inside of our new `CartContext` import `createContext` and create a new context named `CartContext`.
+- Inside of our new `CartContext` import `createContext` and create a new context named `CartContext`. x
 
 **STEP 6 - Providing data with CartContext**
 
-- Let's go ahead and bring our newly created `CartContext` into our `App.js` and wrap all of our components inside of our `CartContext.Provider`. Make sure our `ProductContext.Provider` is still the root provider.
+- Let's go ahead and bring our newly created `CartContext` into our `App.js` and wrap all of our components inside of our `CartContext.Provider`. Make sure our `ProductContext.Provider` is still the root provider. x
 
-- Now pass a value prop to our `CartContext.Provider`, this value prop is going to contain our `cart` state.
+- Now pass a value prop to our `CartContext.Provider`, this value prop is going to contain our `cart` state. x
 
-- Now that we're providing our cart data, we can start to refactor our `Navigation` and `ShoppingCart` components.
+- Now that we're providing our cart data, we can start to refactor our `Navigation` and `ShoppingCart` components. x
 
-- Let's start with our `ShoppingCart` component first. Go ahead and refactor the `ShoppingCart` route to no longer use render props. This will throw us an error, but we'll be able to resolve it quickly.
+- Let's start with our `ShoppingCart` component first. Go ahead and refactor the `ShoppingCart` route to no longer use render props. This will throw us an error, but we'll be able to resolve it quickly. x
 
-- While were at it let's go ahead and remove the props from our navigation as well.
+- While were at it let's go ahead and remove the props from our navigation as well. 
 
 **STEP 7 - The final stretch**
 
